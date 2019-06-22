@@ -45,4 +45,16 @@ print('NA')
 ex.1
 3 1
 ABC
+
+ex.1
+1905
+YYMM
+
+ex.2
+0112
+AMBIGUOUS
+
+ex.3
+1700
+NA
 '''
