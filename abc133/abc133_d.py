@@ -2,23 +2,16 @@ import numpy as np
 
 n = int(input())
 a = [int(i) for i in input().split()] 
-ans = np.array(a)
-if np.all(ans=0):
-    print(ans)
-    exit()
+a = np.array(a)
+x = np.zeros(n)
 
-s = (n,n)
-M = np.matrix(np.zeros(s))
-for i in range(n):
-    vec = np.zeros(n)
-    vec[i]=1/2
-    if i == (n-1):
-        vec[0]=1/2
-    else:
-        vec[i+1]=1/2
-    M[i] = vec
-ans = (np.linalg.inv(M)*(ans.reshape(-1,1)))
-print(' '.join(map(str, map(int, ans.T.tolist()[0]))))
+x[0] = sum(a) - (2*(sum(a[1::2])))
+
+for i in range(n-1):
+    x[i+1] = 2*a[i] - x[i]
+
+print(' '.join(map(str, map(int, x))))
+
 
 '''
 3
